@@ -18,6 +18,7 @@ $(document).ready(function(){
             $('.header').css({'background':'none','box-shadow':'none'});
         }
     });
+    
 
     const counters = document.querySelectorAll('.counter');
     const speed = 120;
