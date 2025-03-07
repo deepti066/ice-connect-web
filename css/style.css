@@ -155,7 +155,7 @@ body{
 }
 
 .header .btn-btn{
-    border-radius: 50px;
+    border-radius: 8px;
 }
 .header .btn-btn:hover{
     letter-spacing: .1rem;
@@ -233,7 +233,7 @@ body{
     }
 }
 
-.about{
+/* .about{
     min-height: 55vh;
     width: 100vw;
     top: -3rem;
@@ -241,30 +241,31 @@ body{
     position: relative;
     overflow: hidden;
     line-height: 10rem;
-}
+    margin-top: 50px;
+} */
 
-.about .row{
+/* .about .row{
     line-height: 4rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0 4rem;
-}
+} */
 
-.about .row .content{
+/* .about .row .content{
     text-align: center;
 }
 
 .about .row .content h3{
     font-size: 3rem;
     color: black;
-}
-
+} */
+/* 
 .about .row .content p{
     font-size: 2rem;
     color: #333;
     padding: 1rem 0;
-}
+} */
 .pt-5 .container .row .section-head p{
     font-size: 2rem;
     color: #333;
@@ -274,6 +275,7 @@ body{
     margin-bottom: 60px;
     text-align: center;
     margin-top: -8rem;
+    padding: 80px 10%;
   }
   .section-head p{
     font-size: 20px;
@@ -356,6 +358,130 @@ body{
     color:#2f2f2f;
   }   
 
+
+/* About Section Styling */
+.about {
+    padding: 80px 10%;
+    background: linear-gradient(135deg, #eef2f3, #d7e1ec);
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Heading Styling */
+.heading {
+    font-size: 40px;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 30px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Content Styling */
+.content {
+    max-width: 900px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Highlighted Text */
+.highlight {
+    color: #0055a5;
+    font-weight: bold;
+}
+
+/* Subheadings */
+.subheading {
+    font-size: 26px;
+    font-weight: bold;
+    color: #003366;
+    margin-top: 30px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.subheading::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #0055a5;
+    margin: 10px auto 20px;
+    border-radius: 2px;
+}
+
+/* Mission Box */
+.mission-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    max-width: 900px;
+}
+
+.mission-item {
+    flex: 1 1 250px;
+    max-width: 300px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.mission-item i {
+    font-size: 24px;
+    color: #0055a5;
+    margin-right: 10px;
+}
+
+.mission-item:hover {
+    transform: scale(1.05);
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(135deg, #0055a5, #003366);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #0077cc, #004499);
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Animated Text */
+/* .animated-text {
+    font-style: italic;
+    font-weight: 500;
+    color: #444;
+    animation: fadeIn 2s ease-in-out;
+} */
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
 .counters {
 	background-image: url(../images/img2.jpg);
     background-size: cover;
@@ -370,7 +496,7 @@ body{
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 30px;
 	text-align: center;
-}
+}   
 
 .counters i {
 	color: #fff;
