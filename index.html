@@ -51,6 +51,14 @@
       background-position: center;
       transition: background 1s ease-in-out;
     }
+
+    .caption{
+        position: absolute;
+        bottom: 20px;
+        background: rgba(0,0,0,0.5);
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
   </style>
   
   <script>
@@ -59,12 +67,20 @@
       "url('images/slide2.jpg')",
       "url('images/slide1.jpg')"
     ];
+
+    const captions = [
+        "Reliable Network Infrastructure For Seamless Connectivity",
+        "High-Speed Fault-Tolerant Internet Connectivity",
+        "Business-Specific Robust Solutions Crafted For You"
+    ];
     
     let currentIndex = 0;
     const homeSection = document.querySelector('.home');
+    const captionText = document.querySelector('.caption');
   
     function changeBackground() {
       homeSection.style.backgroundImage = images[currentIndex];
+      captionText.textContent = captions[currentIndex];
       currentIndex = (currentIndex + 1) % images.length;
     }
   
@@ -445,13 +461,13 @@
 
                   </div>
 
-                  <!-- <div class="col-lg-3 col-md-6 footer-newsletter">
-                      <h4>Subscription</h4>
-                      <p>With Our Skills Put Together, You Get An Ensemble Capable Of Doing Anything And Everything Your Brand Needs. Subscribe Here To Get Our Latest Updates.</p>
-                      <form action="" method="post">
+                  <div class="col-lg-3 col-md-6 footer-newsletter">
+                      <h4>Registered Address:</h4>
+                      <p>303 3RD FLOOR TEMPLE ROAD SIKARIA COMPOUND G S ROAD Dispur Kamrup Assam India 781005</p>
+                      <!-- <form action="" method="post">
                           <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form>
-                  </div> -->
+                      </form> -->
+                  </div>
 
               </div>
           </div>
