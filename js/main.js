@@ -32,23 +32,19 @@ $(document).ready(function(){
     
     $(window).on('scroll', function() {
         if ($(window).scrollTop() > 35) {
-            $('.header').css({
-                'background': '#002e5f',
-                'box-shadow': '0 .2rem .5rem rgba(0,0,0,.4)',
-                'position': 'fixed',
-                'width': '100%',
-                'top': '0',
-                'left': '0'
-            });
+            {
+                $('.header').css({
+                    'background': 'linear-gradient(to right, #d3d3d3, #808080)',
+                    'box-shadow': '0 .2rem .5rem rgba(0,0,0,.4)'
+                });
+                
+            }
         } else {
             $('.header').css({
-                'background': '#002e5f',
-                'box-shadow': 'none',
-                'position': 'fixed',
-                'width': '100%',
-                'top': '0',
-                'left': '0'
+                'background': 'linear-gradient(to right, #d3d3d3, #808080)',
+                'box-shadow': '0 .2rem .5rem rgba(0,0,0,.4)'
             });
+            
         }
     });
     
@@ -72,8 +68,7 @@ function prevSlide() {
     updateSlide();
 }
 
-// Auto Slide every 5 seconds
-setInterval(nextSlide, 5000);
+setInterval(nextSlide, 3000);
 
 
     const counters = document.querySelectorAll('.counter');

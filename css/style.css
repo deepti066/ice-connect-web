@@ -99,6 +99,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: linear-gradient(to right, #d3d3d3, #808080); 
     width: 100%;
     padding: 1rem 2rem;
     position: fixed;
@@ -108,8 +109,9 @@ body{
     position: fixed;
 }
 
-.header .logo{
+.header .logo img{
     font-size: 4rem;
+    height: 80px;
     color: white;
     font: bold;
 }
@@ -163,32 +165,6 @@ body{
     color: white;
     background: #002e5f;
 }
-
-
-/* .home {
-    min-height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column;
-    text-align: center;
-    padding: 0 1rem;
-    position: relative;
-    overflow: hidden !important;
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    transition: background-image 3s ease-in-out; 
- } */
-
-
- /* .home img {
-    width: 100%;  
-    height: 100vh; 
-    object-fit: cover;
-  } */
 
 .home{
     min-height: 100vh;;
@@ -354,19 +330,20 @@ body{
     color: #003366;
     margin-bottom: 30px;
     position: relative;
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
-.heading::after{
+/* .about .heading::after{
     content: '';
     display: block;
     width: 60px;
     height: 4px;
     background: #0a2a5e;
     margin: 10px auto 0;
-}
+} */
 
-.heading p{
+.about .heading p{
     font-size: 40px;
 }
 
@@ -375,6 +352,7 @@ body{
 #hiddenContent {
     display: none;
 }
+
 
 .read-btn {
     background-color: #e86c1c;
@@ -748,11 +726,11 @@ body{
     background-color: #4F84C4;
 } */
 
-@media (max-width: 575px) {
+/* @media (max-width: 575px) {
     .testimonials .testimonial-text {
         padding: 25px;
     }
-}
+} */
 
 .clients {
     position: relative;
@@ -762,7 +740,16 @@ body{
     margin-bottom: -10rem;
 }
 
-.clients .container .section-head h2{
+/* .clients .section-header::after{
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #0a2a5e;
+    margin: 10px auto 0;
+} */
+
+.clients .container .section-header h2{
     color: #0a2a5e; /* Dark Blue */
     font-size: 32px;
     font-weight: 600;
@@ -772,13 +759,15 @@ body{
     display: inline-block;
 }
 
+
 .clients .section-header p {
     padding-bottom: 10px;
-    margin-top: 2.5rem;
+    margin-top: -20px;
     text-align: center;
     font-size: 2rem;
     color: #333;
-    padding: 1rem 0;
+    padding: 1rem;
+    font-weight: bold;
 }
 
 .clients-carousel{
@@ -796,23 +785,23 @@ body{
     justify-content: center;
     border: 2px solid #ccc; 
     padding: 0px;
-    background-color: transparent; /* Light gray background */
+    background-color: transparent;
     border-radius: 10px;
 }
 
 .clients img {
-    width: 500%;
+    width: 100%;
     height: auto;
     opacity: 1;
     transition: 0.3s;
     padding: 15px 0;
     margin-left: 1%;
     margin-right: 1%;
-    opacity: .7;
+    opacity: 0.7;
 }
 
 .clients img:hover {
-    opacity: ;
+    opacity: 10;
 }
 
 .clients .owl-nav,
@@ -834,7 +823,9 @@ body{
     background-color: #4F84C4;
 }    
 
-.team{
+
+
+/* .team{
     min-width: 100vw;
     min-height: 95vh;
     text-align: center;
@@ -947,7 +938,7 @@ body{
     background: #ccc;
     bottom: -3rem;
     left: -4rem;
-}
+} */
 
 .contact{
     text-align: center;
@@ -1332,11 +1323,10 @@ body{
     }
 
     .header .logo img{
-        width: 20%;
-        height: 3rem;
-        top: 0;
-        left: 0;
-        background-size: cover;
+        font-size: 4rem;
+        height: 80px;
+        color: white;
+        font: bold;
     }
 
     .header .fa-bars{

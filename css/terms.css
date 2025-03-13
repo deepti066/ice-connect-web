@@ -22,7 +22,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #002e5f;
+    background: linear-gradient(to right, #d3d3d3, #808080); 
     width: 100%;
     padding: 1rem 2rem;
     position: fixed;
@@ -32,8 +32,9 @@ body{
     position: fixed;
 }
 
-.header .logo{
+.header .logo img{
     font-size: 4rem;
+    height: 80px;
     color: white;
     font: bold;
 }
@@ -87,11 +88,10 @@ body{
     }
 
     .header .logo img{
-        width: 20%;
-        height: 3rem;
-        top: 0;
-        left: 0;
-        background-size: cover;
+        font-size: 4rem;
+        height: 80px;
+        color: white;
+        font: bold;
     }
 
     .header .fa-bars{
@@ -165,7 +165,7 @@ body{
 }
 
 /* Headings */
-h1 {
+.content h1 {
     color: #0a2a5e; /* Dark Blue */
     font-size: 32px;
     font-weight: 600;
@@ -175,12 +175,6 @@ h1 {
     display: inline-block;
 }
 
-h2 {
-    color: #004488;
-    font-size: 22px;
-    margin-top: 30px;
-    text-align: center;
-}
 
 /* Ordered List Styling */
 ol {

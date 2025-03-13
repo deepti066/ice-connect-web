@@ -27,7 +27,7 @@ body{
 .header{
     display: flex;
     align-items: center;
-    background-color: #002e5f;
+    background: linear-gradient(to right, #d3d3d3, #808080); 
     justify-content: space-between;
     width: 100%;
     padding: 1rem 2rem;
@@ -38,8 +38,9 @@ body{
     position: fixed;
 }
 
-.header .logo{
+.header .logo img{
     font-size: 4rem;
+    height: 80px;
     color: white;
     font: bold;
 }
@@ -381,11 +382,10 @@ body{
     }
 
     .header .logo img{
-        width: 20%;
-        height: 3rem;
-        top: 0;
-        left: 0;
-        background-size: cover;
+        font-size: 4rem;
+        height: 80px;
+        color: white;
+        font: bold;
     }
 
     .header .fa-bars{
