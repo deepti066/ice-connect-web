@@ -422,7 +422,7 @@ body{
     right: 15px;
     bottom: 15px;
     transition: background 0.3s;
-    z-index: 9;
+    z-index: 9;     
 }
 
 .back-to-top i {

@@ -1,6 +1,17 @@
 <!DOCTYPE html>
     <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4833NZDZ0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-L4833NZDZ0');
+</script>
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,39 +40,42 @@
         <div class="fas fa-bars"></div>
         <nav class="navbar">
             <ul>
-                <li><a href="#about">about</a></li>
-                <li><a href="#service">services</a></li>
+                <li><a href="/html/about.html">about</a></li>
+                <li><a href="/html/services.html">services</a></li>
                 <li><a href="#contact"><button class="btn-btn">Contact Us</button></a></li>
             </ul>
         </nav>
     </header>
 
   <section id="home" class="home">
-    <h1 id="text">Reliable Network Infrastructure for Seamless Connectivity</h1>
     <div class="wave wave1"></div>
     <div class="wave wave2"></div>
     <div class="wave wave3"></div>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide" style="background-image: url('/images/slide3.jpg');">
+                <div class="slide-content">
+                    <h2>Reliable Network Infrastructure For Seamless Connectivity</h2>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('/images/slide2.jpg');">
+                <div class="slide-content">
+                    <h2>High-Speed Fault-Tolerant Internet Connectivity</h2>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('/images/slide1.jpg');">
+                <div class="slide-content">
+                    <h2>Business-Specific Robust Solutions Crafted For You</h2>
+                </div>
+            </div>
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
   </section>
-
-<style>
-    .home {
-      width: 100%;
-      height: 100vh;
-      background-size: cover;
-      background-position: center;
-      transition: background 1s ease-in-out;
-    }
-
-    .caption{
-        position: absolute;
-        bottom: 20px;
-        background: rgba(0,0,0,0.5);
-        padding: 10px 20px;
-        border-radius: 5px;
-    }
-  </style>
   
-  <script>
+  <!-- <script>
     const images = [
       "url('images/slide3.jpg')",
       "url('images/slide2.jpg')",
@@ -86,214 +100,78 @@
   
     setInterval(changeBackground, 3000); // Change every 3 seconds
     changeBackground(); // Initial call
-  </script>
+  </script> -->
 
 <section id="about" class="about">
     <h1 class="heading">About Us</h1>
     <div class="row">
         <div class="content">
-            <p>
-               Ice Connect ISP Private Limited is involved in constructing the next-generation 
-                internet services for enterprise clients in Assam. We provide secured fiber optic broadband and 
-                Internet Lease Line (ILL) services to enterprise clients in Assam. ICE CONNECT ISP Private Limited holds 
-                an all-Assam Class-B ISP license issued by the Department of Telecommunications (DoT), Govt. of India.
-            </p>
+            <p>Ice Connect ISP Private Limited leads the development of next-generation enterprise internet services in Assam. We are the experts in deploying secure fiber broadband and Internet Lease Line (ILL) services as per the specific requirements of local businesses. Ice Connect ISP Private Limited possesses all-Assam Class-B ISP approval, issued by the Department of Telecommunications (DoT), Government of India.</p>
+            <p>Apart from our core services, Ice Connect ISP Private Limited is working actively on a complete service framework that facilitates the delivery of next-generation voice, video, IT applications, and multimedia content over any broadband or IP-based network. This state-of-the-art framework is made replicable for internet service providers worldwide. We work with top technology partners to provide the best quality solutions to our customers.</p>
             
-            <p>
-                ICE Connect is also developing a full-service framework capable of providing leading-edge voice, video, IT applications, and multimedia content services over any broadband or IP-based network. This framework can be replicated by us for internet service providers around the world. We partner with top technology leaders to ensure the best solutions.
-            </p>
+            <button class="btn" id="readMoreBtn">Read More</button>
 
-            <h2 class="subheading">Our Mission</h2>
-            <p>At ICE Connect, we strive to offer high-performance, secure, and reliable Internet Lease Line solutions to businesses of all sizes.</p>
-            
-            <div class="mission-box">
-                <div class="mission-item">
-                    <i class="fas fa-check-circle"></i>
-                    <b>Unmatched Reliability:</b> Minimal downtime, seamless connectivity.
-                </div>
-                <div class="mission-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <b>Security:</b> Advanced encryption & protection.
-                </div>
-                <div class="mission-item">
-                    <i class="fas fa-cogs"></i>
-                    <b>Customization:</b> Tailored bandwidth for all business sizes.
-                </div>
-                <div class="mission-item">
-                    <i class="fas fa-headset"></i>
-                    <b>24/7 Support:</b> Dedicated customer service to assist you anytime.
-                </div>
-                <div class="mission-item">
-                    <i class="fas fa-lightbulb"></i>
-                    <b>Innovation:</b> Upgraded infrastructure for the digital future.
+            <!-- Hidden Content -->
+            <div class="pt-5 pb-5" style="background-color: #f2f2f2; margin-top: 20px; display: none;" id="hiddenContent">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-head col-sm-12" id="service">
+                            <h1>Our core competency is in providing Broadband and Internet Lease Line (ILL) services</h1>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-wifi"></i></span>
+                                <h6 style="font-size: 18px; font-weight: bold;">BroadBand Services</h6>
+                                <p>Our high-speed Broadband services ensure reliable and efficient internet connectivity for businesses of all sizes. Designed to support various applications, from everyday browsing to cloud operations, we offer scalable solutions to meet your specific needs.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="item"> <span class="icon feature_box_col_two"><i class="fas fa-ethernet"></i></span>
+                                <h6 style="font-size: 18px; font-weight: bold;">Internet Lease Line (ILL) Services</h6>
+                                <p>Our Internet Lease Line (ILL) provides dedicated, uninterrupted connectivity, ensuring consistent speed and reliability for critical business applications. Ideal for VoIP, cloud computing, and large data transfers, our ILL services come with customizable bandwidth options to suit your requirements.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <h2 class="subheading">Our Vision</h2>
-            <p>Our vision is to be the premier provider of innovative and reliable internet connectivity services, enabling businesses to succeed in a digitally-influenced environment. We look to revolutionize the manner in which companies are connected, communicate, and develop by offering the most advanced, secure, and scalable Internet Lease Line solutions.</p>
-            
-            <p>We see a future where companies can depend on a speedy, committed, and uninterrupted internet connection that fuels their day-to-day operations, inspires innovation, and builds global collaborations. Our dream is to help companies forge stronger bonds with their customers, partners, and employees through speedy and secure internet connections that open doors and make possibilities a reality. We aim to create long-term relationships with our customers, helping them succeed in a more interconnected world.</p>
-            
-            <!-- <a href="#"><button class="btn">Read More</button></a> -->
         </div>
     </div>
 </section>
 
 
 
-  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
-    <div class="container">
-      <div class="row">
-        <div class="section-head col-sm-12" id="service">
-          <h1>Our Services</h1>
-          <p>We focus on providing leased line and broadband solutions, allowing businesses to access fast, reliable, and safe internet. With our total suite of services, we guarantee professional support to assist our clients in constructing and expanding their digital infrastructure effortlessly.
-            </p>
-        </div>
-        <div class="col-lg-6 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-wifi"></i></span>
-            <h6>BroadBand Services</h6>
-            <p>Fast Connectivity: Business and personal needs, whether big or small, are easily met with reliable and fast internet.</p>
-            <p>Wide Availability: Reaching for homes and businesses in urban, suburban, and even rural areas broadens coverage availability.</p>
-            <p>Reliable Service: High-speed connections allow seamless browsing, downloading, and even streaming with minimal downtime.</p>
-            <p>Amazing Pricing: Flexible budgets ranging from basic to premium plans are accommodated by our several pricing models.</p>
-            <p>Flexible Data Caps: Get value for your spending by selecting from various plans with different data caps that fit your usage.</p>
-          </div>
-        </div>
-        <div class="col-lg-6 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_two"><i class="fas fa-ethernet"></i></span>
-            <h6>Internet Lease Line Services</h6>
-            <p>High-Security Connection: No other users may tamper with your internet access and data because it is exclusive and private.</p>
-            <p>Fast Connectivity: The uninterrupted internet connection available is also good for fast and bandwidth intensive applications.</p>
-            <p>Uptime Reliability: With guaranteed uptime, you can rest assured that business-critical processes will always have reliable internet support.</p>
-            <p>Bandwidth Exclusivity: There is no congesting or sharing of bandwidth for other users which guarantees dedicated speed for your organization.</p>
-            <p>Business Class Quality: For organizations that need operational connectivity that is consistent and high-performing, this is ideal.</p>
-        </div>
-        </div>
-      </div>
-    </div>
-</div>
 
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> -->
-<!-- 
-<div class="pt-5 pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="section-head-1 col-sm-12" style="text-align: center;">
-          <h3 style="margin-top: -5rem;" id="portfolio"><span>Our</span> Projects</h4>
-          
-          <p>The objective of IT Company is to enable a large number of youth to take up <br>industry-relevant skill training that will help them<br> in securing a better livelihood.
-            </p>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          
-          <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-            <h6>Project-1</h6>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-            <h6>Project-2</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-            <h6>Project-3</h6>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.<br><br><br></p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div> -->
+    <div class="communicate">
+        <h3>Our Key Strengths</h3>
+        <div class="strengths-container">
 
-<div class="communicate">
-    <h3>Fast & Secure High Speed Broadband Services for Your Business</h3>
-    <a href="#contact"><button class="btn">Contact Now</button></a>
-</div>
-
-<!-- <div class="testimonials mt-100">
-    <div class="container">
-        <div class="section-header" style="text-align: center;">
-            <h2 style="margin-top: -15rem;">Testimonials</h2>
-            <p style="font-size: 2rem;">
-                See what people have to say about us
-            </p>
-        </div>
-
-        <div class="owl-carousel testimonials-carousel">
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-1.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-1</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
-
-                    </p>
-                </div>
+            <div class="strength-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <p>Unrivaled <br>Reliability</p>
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-2</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
 
-                    </p>
-                </div>
+            <div class="strength-item">
+                <i class="fas fa-shield-alt"></i>
+                <p>Top-Tier <br>Security</p>
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-3</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
 
-                    </p>
-                </div>
+            <div class="strength-item">
+                <i class="fas fa-cogs"></i>
+                <p>Personalized Customization</p>
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-4</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
 
-                    </p>
-                </div>
+            <div class="strength-item">
+                <i class="fas fa-headset"></i>
+                <p>24/7 * 365 Assistance</p>
             </div>
-            <div class="testimonial-item row align-items-center">
-                <div class="testimonial-img">
-                    <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                </div>
-                <div class="testimonial-text">
-                    <h3>Person-5</h3>
-                    <h4>Designation</h4>
-                    <p>
-                        Testimonial
 
-                    </p>
-                </div>
+            <div class="strength-item">
+                <i class="fas fa-lightbulb"></i>
+                <p>Continuous Innovation</p>
             </div>
+
         </div>
     </div>
-</div> -->
+
 
 <div class="clients mt-100">
     <div class="container">
@@ -304,13 +182,12 @@
             </p>
         </div>
         <div class="owl-carousel clients-carousel">
-            <img src="./images/client1.png" alt="Client Logo">
-            <img src="./images/client2.png" alt="Client Logo">
-            <img src="./images/client3.png" alt="Client Logo">
-            <img src="./images/client4.jpg" alt="Client Logo">
-            <img src="./images/client5.jpg" alt="Client Logo">
-            <img src="./images/client6.jpeg" alt="Client Logo">
-            <img src="./images/client7.png" alt="Client Logo">
+            <div class="client-box"><img src="./images/client1.png" alt="Client Logo"></div>
+            <div class="client-box"><img src="./images/client3.png" alt="Client Logo"></div>
+            <div class="client-box"><img src="./images/client4.jpg" alt="Client Logo"></div>
+            <div class="client-box"><img src="./images/client5.jpg" alt="Client Logo"></div>
+            <div class="client-box"> <img src="./images/client6.jpeg" alt="Client Logo"></div>
+            <div class="client-box"><img src="./images/client7.png" alt="Client Logo"></div>
         </div>
     </div>
 </div>
@@ -324,78 +201,6 @@
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-<!-- <section class="team" style="margin-top: 7rem;">
-  <h1 class="heading" style="margin-top: -1.5rem;" id="team">our team</h1>
-  <p></p>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-845434.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Schott Watkins</h3>
-              <span>Web Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-vinicius-wiesehofer-1130624.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Nicole Bell</h3>
-              <span>Mobile Developer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-hussein-altameemi-2776353.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>John Doe</h3>
-              <span>Graphic Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="card">
-          <div class="image">
-              <img src="./images/pexels-andrea-piacquadio-745136.jpg" alt="Team member 1">
-          </div>
-          <div class="info">
-              <h3>Rose Matthews</h3>
-              <span>Web Designer</span>
-              <div class="icons">
-                  <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-                  <a href="https://twitter.com/login" class="fab fa-twitter"></a>
-                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-                  <a href="https://www.linkedin.com/" class="fab fa-linkedin"></a>
-              </div>
-          </div>
-      </div>
-  </div>
-</section> -->
 
 <section id="contact" class="contact">
     <h1 class="heading">get in touch</h1>
@@ -423,9 +228,9 @@
                       <h4>About Us</h4>
                       <ul>
                           <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#about">About us</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#service">Our services</a></li>
-                          <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="/html/about.html">About us</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="/html/services.html">Our services</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="/html/terms.html">Terms & condition</a></li>
                           <li><i class="ion-ios-arrow-forward"></i> <a href="privacy.html">Privacy policy</a></li>
                       </ul>
                   </div>
@@ -446,28 +251,27 @@
                       <p>
                           Madhab Tower, 4th Floor<br>
                           G.S. Road, Rukminigaon<br>
-                          Guwahati- 781022, Assam<br>
+                          Guwahati- 781022, Kamrup, Assam<br>
                           Phone: <a href="tel:+918473067788">+91-8473067788</a><br>
-                          <a href="mailto:services@iceconnectisp.com">services@iceconnectisp.com</a>
+                          Email:<a href="mailto:services@iceconnectisp.com">services@iceconnectisp.com</a>
                       </p>
-
-                      <!-- <div class="social-links">
-                          <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
-                          <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
-                          <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
-                          <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
-                          <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
-                      </div> -->
 
                   </div>
 
                   <div class="col-lg-3 col-md-6 footer-newsletter">
                       <h4>Registered Address:</h4>
-                      <p>303 3RD FLOOR TEMPLE ROAD SIKARIA COMPOUND G S ROAD Dispur Kamrup Assam India 781005</p>
-                      <!-- <form action="" method="post">
-                          <input type="email" name="email"><input type="submit"  value="Subscribe">
-                      </form> -->
+                      <p>303, 3rd Floor,Temple Road<br>
+                        Sikaria Compound, G.S.Road, Dispur<br>
+                        Guwahati- 781005, Kamrup, Assam</p>
                   </div>
+
+                  <div class="col-lg-3 col-md-6 footer-links social-links">
+                    <h4>Follow Us On</h4>
+                    <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
+                    <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
+                    <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
+                    <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
+                </div>
 
               </div>
           </div>
@@ -475,7 +279,7 @@
 
       <div class="container">
           <div class="row align-items-center">
-              <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
+              <div class="col-md-6 mx-auto copyright" style="color: #fff; font-size: 1.3rem;">
                   Copyright &copy; 2025 ICE CONNECT. All Rights Reserved.
               </div>
           </div>
