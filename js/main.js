@@ -48,12 +48,18 @@ $(document).ready(function(){
         }
     });
     
+// Image slider
 let currentIndex = 0;
 const slides = document.querySelectorAll(".slide");
 const totalSlides = slides.length;
+const slider = document.querySelector(".slider");
+
+// Select buttons
+const nextButton = document.querySelector(".next");
+const prevButton = document.querySelector(".prev");
 
 function updateSlide() {
-    document.querySelector(".slider").style.transform = `translateX(-${currentIndex * 100}%)`;
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
 // Next Slide
@@ -68,7 +74,13 @@ function prevSlide() {
     updateSlide();
 }
 
-setInterval(nextSlide, 3000);
+// Attach event listeners
+nextButton.addEventListener("click", nextSlide);
+prevButton.addEventListener("click", prevSlide);
+setInterval(nextSlide, 5000);
+
+
+
 
 
     const counters = document.querySelectorAll('.counter');
@@ -92,6 +104,8 @@ setInterval(nextSlide, 3000);
     "use strict";
 
 
+// Index page about hidden content
+
     $(document).ready(function() {
         $("#readMoreBtn").click(function() {
             $("#hiddenContent").slideToggle("slow"); // Toggle the content
@@ -105,7 +119,10 @@ setInterval(nextSlide, 3000);
         });
     });
     
-    
+
+
+// Client images     
+
     $(".clients-carousel").owlCarousel({
         autoplay: true,
         dots: true,

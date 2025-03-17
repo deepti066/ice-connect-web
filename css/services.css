@@ -12,14 +12,15 @@
 
 html{
     font-size: 62.5%;
-}
+}   
 
 body{
     overflow-x: hidden;
     padding-top: 80px;
-    background: url(/images/about-img.jpeg);
+    background: url(/images/ABOUT\ US.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 /* Navbar Base Styles */
@@ -40,7 +41,7 @@ body{
 
 .header .logo img{
     font-size: 4rem;
-    height: 80px;
+    height: 60px;
     color: white;
     font: bold;
 }

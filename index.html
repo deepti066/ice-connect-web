@@ -34,20 +34,25 @@
     </style>
 </head>
 <body>
+
+    <!-- Navbar section -->
+
     <header class="header">
-        <!-- <a href="#" class="logo">ICE-CONNECT</a> -->
         <a href="#" class="logo">
-            <img src="./images/ice-logo.png" alt="ICE-CONNECT">
+            <img src="./images/ICE LOGO 0033.png" alt="ICE-CONNECT">
         </a>
         <div class="fas fa-bars"></div>
         <nav class="navbar">
             <ul>
                 <li><a href="/html/about.html">about</a></li>
                 <li><a href="/html/services.html">services</a></li>
-                <li><a href="#contact"><button class="btn-btn">Contact Us</button></a></li>
+                <li><a href="/html/contact-us.html"><button class="btn-btn">Contact Us</button></a></li>
             </ul>
         </nav>
     </header>
+
+
+<!-- Index Page Section -->
 
   <section id="home" class="home">
     <div class="wave wave1"></div>
@@ -72,72 +77,47 @@
                 </div>
             </div>
         </div>
-        <button class="prev" onclick="prevSlide(-1)">&#10094;</button>
-        <button class="next" onclick="nextSlide(1)">&#10095;</button>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
     </div>
   </section>
-  
-  <!-- <script>
-    const images = [
-      "url('images/slide3.jpg')",
-      "url('images/slide2.jpg')",
-      "url('images/slide1.jpg')"
-    ];
 
-    const captions = [
-        "Reliable Network Infrastructure For Seamless Connectivity",
-        "High-Speed Fault-Tolerant Internet Connectivity",
-        "Business-Specific Robust Solutions Crafted For You"
-    ];
-    
-    let currentIndex = 0;
-    const homeSection = document.querySelector('.home');
-    const captionText = document.querySelector('.caption');
-  
-    function changeBackground() {
-      homeSection.style.backgroundImage = images[currentIndex];
-      captionText.textContent = captions[currentIndex];
-      currentIndex = (currentIndex + 1) % images.length;
-    }
-  
-    setInterval(changeBackground, 3000); // Change every 3 seconds
-    changeBackground(); // Initial call
-  </script> -->
+<!-- About Us Section -->
+ 
+        <section id="about" class="about">
+            <h1 class="heading">About Us</h1>
+            <div class="row">
+                <div class="content">
+                    <p>Ice Connect ISP Private Limited leads the development of next-generation enterprise internet services in Assam. We are the experts in deploying secure fiber broadband and Internet Lease Line (ILL) services as per the specific requirements of local businesses. Ice Connect ISP Private Limited possesses all-Assam Class-B ISP approval, issued by the Department of Telecommunications (DoT), Government of India.</p>
+                    <p>Apart from our core services, Ice Connect ISP Private Limited is working actively on a complete service framework that facilitates the delivery of next-generation voice, video, IT applications, and multimedia content over any broadband or IP-based network. This state-of-the-art framework is made replicable for internet service providers worldwide. We work with top technology partners to provide the best quality solutions to our customers.</p>
+                    
+                    <button class="btn" id="readMoreBtn">Read More</button>
 
-<section id="about" class="about">
-    <h1 class="heading">About Us</h1>
-    <div class="row">
-        <div class="content">
-            <p>Ice Connect ISP Private Limited leads the development of next-generation enterprise internet services in Assam. We are the experts in deploying secure fiber broadband and Internet Lease Line (ILL) services as per the specific requirements of local businesses. Ice Connect ISP Private Limited possesses all-Assam Class-B ISP approval, issued by the Department of Telecommunications (DoT), Government of India.</p>
-            <p>Apart from our core services, Ice Connect ISP Private Limited is working actively on a complete service framework that facilitates the delivery of next-generation voice, video, IT applications, and multimedia content over any broadband or IP-based network. This state-of-the-art framework is made replicable for internet service providers worldwide. We work with top technology partners to provide the best quality solutions to our customers.</p>
-            
-            <button class="btn" id="readMoreBtn">Read More</button>
-
-            <!-- Hidden Content -->
-            <div class="pt-5 pb-5" style="background-color: #f2f2f2; margin-top: 20px; display: none;" id="hiddenContent">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-head col-sm-12" id="service">
-                            <h1>Our core competency is in providing Broadband and Internet Lease Line (ILL) services</h1>
-                        </div>
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-wifi"></i></span>
-                                <h6 style="font-size: 18px; font-weight: bold;">BroadBand Services</h6>
-                                <p>Our high-speed Broadband services ensure reliable and efficient internet connectivity for businesses of all sizes. Designed to support various applications, from everyday browsing to cloud operations, we offer scalable solutions to meet your specific needs.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="item"> <span class="icon feature_box_col_two"><i class="fas fa-ethernet"></i></span>
-                                <h6 style="font-size: 18px; font-weight: bold;">Internet Lease Line (ILL) Services</h6>
-                                <p>Our Internet Lease Line (ILL) provides dedicated, uninterrupted connectivity, ensuring consistent speed and reliability for critical business applications. Ideal for VoIP, cloud computing, and large data transfers, our ILL services come with customizable bandwidth.</p>
+                    <!-- Hidden Content -->
+                    <div class="pt-5 pb-5" style="background-color: #f2f2f2; margin-top: 20px; display: none;" id="hiddenContent">
+                        <div class="container">
+                            <div class="row">
+                                <div class="section-head col-sm-12" id="service">
+                                    <h1>Our core competency is in providing Broadband and Internet Lease Line (ILL) services</h1>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-wifi"></i></span>
+                                        <h6 style="font-size: 18px; font-weight: bold;">BroadBand Services</h6>
+                                        <p>Our high-speed Broadband services ensure reliable and efficient internet connectivity for businesses of all sizes. Designed to support various applications, from everyday browsing to cloud operations, we offer scalable solutions to meet your specific needs.</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="item"> <span class="icon feature_box_col_two"><i class="fas fa-ethernet"></i></span>
+                                        <h6 style="font-size: 18px; font-weight: bold;">Internet Lease Line (ILL) Services</h6>
+                                        <p>Our Internet Lease Line (ILL) provides dedicated, uninterrupted connectivity, ensuring consistent speed and reliability for critical business applications. Ideal for VoIP, cloud computing, and large data transfers, our ILL services come with customizable bandwidth.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
 
 
@@ -188,7 +168,7 @@
             <div class="client-box"><img src="./images/client3.png" alt="Client Logo"></div>
             <div class="client-box"><img src="./images/client4.jpg" alt="Client Logo"></div>
             <div class="client-box"><img src="./images/client5.jpg" alt="Client Logo"></div>
-            <div class="client-box"> <img src="./images/client6.jpeg" alt="Client Logo"></div>
+            <div class="client-box"><img src="./images/client6.jpeg" alt="Client Logo"></div>
             <div class="client-box"><img src="./images/client7.png" alt="Client Logo"></div>
         </div>
     </div>

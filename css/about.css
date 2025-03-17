@@ -40,7 +40,7 @@ body{
 
 .header .logo img{
     font-size: 4rem;
-    height: 80px;
+    height: 60px;
     color: white;
     font: bold;
 }
@@ -346,7 +346,7 @@ body{
     color: black;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .footer .credit {
         text-align: right;
     }
@@ -354,9 +354,17 @@ body{
     .footer .copyright {
         text-align: left;
     }
-}
+} */
 
 @media (max-width: 1000px){
+    body{
+        overflow-x: hidden;
+        padding-top: 80px;
+        background: url(../images/ABOUT\ US.jpg);
+         /* background-repeat: no-repeat; */
+        background-size: cover;
+        /* background-attachment: fixed ; */
+    }
     html{
         font-size: 50%;
     }
@@ -411,12 +419,12 @@ body{
         top: 5.8rem;
     }
 
-    .home{
+    .about{
         min-height: 60vh;
     }
 
-    .home h2{
-        color: #fff;
+    .about h1{
+        color: #002e5f;
         font-size: 4rem;
     }
 
