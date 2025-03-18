@@ -253,7 +253,7 @@ body{
 
 .slide-content h2{
     position: relative;
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
 }
 
@@ -302,6 +302,11 @@ body{
     .slider-container .slide{
         width: 100%;
         height: auto;
+    }
+    .slide-content h2{
+        position: relative;
+        font-size: 20px;
+        text-align: center;
     }
 
 }
@@ -1184,7 +1189,7 @@ body{
             color: #ffffff;
             line-height: 26px;
         }
-        
+/*         
         .footer .footer-top .footer-newsletter input[type="email"] {
             padding: 6px 8px;
             width: 60%;
@@ -1203,14 +1208,14 @@ body{
             background: #ffffff;
             transition: 0.3s;
             cursor: pointer;
-        }
+        } */
         
-        .footer .footer-top .footer-newsletter input[type="submit"]:hover {
+        /* .footer .footer-top .footer-newsletter input[type="submit"]:hover {
             color: #ffffff;
             background: #00bfff;
             border: 1px solid #00bfff;
             letter-spacing: .2rem;
-        }
+        } */
         
         .footer .footer-top .footer-newsletter p {
             color: #ffffff;
