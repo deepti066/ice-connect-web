@@ -16,6 +16,10 @@ html{
 
 body{
     overflow-x: hidden;
+    background-image: url(/images/ABOUT\ US.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .header{
@@ -157,7 +161,7 @@ body{
 
 .content {
     max-width: 900px;
-    background: rgba(255, 255, 255, 0.9); /* Light background for readability */
+    background: #e6ebf3; /* Light background for readability */
     padding: 100px;
     margin: 50px auto;
     border-radius: 10px;
@@ -191,7 +195,7 @@ ol {
 
 ol li {
     margin-bottom: 12px;
-    font-size: 16px;
+    font-size: 18px;
     text-align: justify;
 }
 

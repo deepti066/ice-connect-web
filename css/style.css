@@ -253,7 +253,7 @@ body{
 
 .slide-content h2{
     position: relative;
-    font-size: 30px;
+    font-size: 50px;
     text-align: center;
 }
 
@@ -389,6 +389,7 @@ body{
     line-height: 1.8;
     color: #333;
     text-align: left;
+    justify-content: left;
 }
 
 /* Highlighted Text */
@@ -775,7 +776,7 @@ body{
     padding-bottom: 10px;
     margin-top: -20px;
     text-align: center;
-    font-size: 1rem;
+    font-size: 18px;
     color: #333;
     padding: 1rem;
     font-weight: 5px;
@@ -950,7 +951,7 @@ body{
     bottom: -3rem;
     left: -4rem;
 } */
-
+/* 
 .contact{
     text-align: center;
     align-items: center;
@@ -1082,12 +1083,13 @@ body{
 		{
 			color: #aaa;
             font-size: 1.5rem;
-		}
+		} */
 
         .footer {
             position: relative;
             padding: 0 0 30px 0;
             background: #333;
+            margin-top: 100px;
             /* display: flex; */
             /* justify-content: center; */
             /* align-items: center; */
@@ -1414,13 +1416,13 @@ body{
     .about .row{
         line-height: 2rem;
         display: flex;
-        align-items: center;
+        align-items: left;
         justify-content: space-around;
         padding: 0 4rem;
     }
     
     .about .row .content{
-        text-align: center;
+        text-align: left;
     }
     
     .about .row .content h3{
@@ -1446,7 +1448,7 @@ body{
         padding-bottom: 10px;
         margin-top: 2.5rem;
         text-align: center;
-        font-size: 5rem;
+        font-size: 3rem;
     }
     
 
@@ -1465,22 +1467,22 @@ body{
 }
 
 .clients-carousel img {
-    max-width: 100%; /* Ensures image fits inside the box */
-    max-height: 80%; /* Prevents oversized images */
-    object-fit: contain; /* Ensures full image is visible */
+    max-width: 100%; 
+    max-height: 80%; 
+    object-fit: contain; 
 }
 
 .client-box {
-    width: 150px; /* Fixed width for uniform size */
-    height: 150px; /* Fixed height for uniform size */
+    width: 200px;
+    height: 100px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f8f8f8; /* Light background to make it visible */
-    border: 1px solid #ddd; /* Light border for visibility */
-    border-radius: 10px; /* Optional: rounded corners */
-    margin: 15px; /* Adds spacing between items */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+    background: #f8f8f8; 
+    border: 1px solid #ddd;
+    border-radius: 10px; 
+    margin: 15px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .client-box img {

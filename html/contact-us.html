@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ice Connect ISP</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="icon" href="./images/ic-image.png">
@@ -56,15 +56,44 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.839486761086!2d91.79831617613083!3d26.136776093003846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a59e7457b337b%3A0xa7d6449550164ef0!2sARYAHI%20OPTINET%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1741265157359!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="contact-form">
-            <form action="./contactme.php" method="POST">
+            <form action="/contactme.php" method="POST">
                 <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
                 <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
                 <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
+                 <!-- CAPTCHA Section -->
+                <label id="captchaQuestion"></label>
+                <input type="number" id="captchaInput" placeholder="Enter the sum" required>
+                <span id="captchaError" style="color: red; display: none;">Incorrect, try again!</span>
+                <input type="hidden" id="captchaSum" name="captchaSum">
                 <input type="submit" value="Submit" name="submit" class="contact-form-btn">
             </form>
         </div>
         </div>
+
+        <script>
+            let num1, num2, correctSum;
+        
+            function generateCaptcha() {
+                num1 = Math.floor(Math.random() * 10) + 1;
+                num2 = Math.floor(Math.random() * 10) + 1;
+                correctSum = num1 + num2;
+                document.getElementById("captchaQuestion").innerText = `Enter Captcha ${num1} + ${num2}?`;
+                document.getElementById("captchaSum").value = correctSum; // Store sum in hidden input
+            }
+        
+            function validateCaptcha() {
+                let userSum = document.getElementById("captchaInput").value;
+                if (parseInt(userSum) !== correctSum) {
+                    document.getElementById("captchaError").style.display = "inline";
+                    generateCaptcha(); 
+                    return false; 
+                }
+                return true; 
+            }
+        
+            window.onload = generateCaptcha;
+        </script>
 
 
     <div class="footer">
@@ -74,11 +103,11 @@
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>About Us</h4>
                         <ul>
-                            <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="/index.html">Home</a></li>
                             <li><i class="ion-ios-arrow-forward"></i> <a href="/html/about.html">About us</a></li>
                             <li><i class="ion-ios-arrow-forward"></i> <a href="/html/services.html">Our services</a></li>
                             <li><i class="ion-ios-arrow-forward"></i> <a href="/html/terms.html">Terms & condition</a></li>
-                            <li><i class="ion-ios-arrow-forward"></i> <a href="privacy.html">Privacy policy</a></li>
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="/privacy.html">Privacy policy</a></li>
                         </ul>
                     </div>
   
