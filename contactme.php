@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     die("405 Method Not Allowed - Please use a POST request.");
 }
 
-// Sanitize Inputs
+
 $name = htmlspecialchars($_POST["name"]);
 $phone = htmlspecialchars($_POST["phone"]);
 $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
