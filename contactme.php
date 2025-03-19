@@ -1,11 +1,9 @@
-<?php
-session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+<?php   
+    // require("./mailing/mailfunction.php");
 
-require("./mailing/mailfunction.php");
-
-// Database Connection
+    //print_r($_SERVER["REQUEST_METHOD"] );
+    //exit();
+    // Database Connection
 $servername = "localhost";
 $username = "root";
 $password = "password";
@@ -30,33 +28,32 @@ $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
 $message = htmlspecialchars($_POST["message"]);
 $captcha = $_POST["captcha"];
 
-// CAPTCHA Validation
-if (!isset($_SESSION["captcha"]) || $captcha != $_SESSION["captcha"]) {
-    die("<h1>Incorrect CAPTCHA! Please try again.</h1><a href='contact.html'>Go Back</a>");
-}
-
 // Insert into MySQL
-$sql = "INSERT INTO contacts (name, phone, email, message) VALUES (?, ?, ?, ?)";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("ssss", $name, $phone, $email, $message);
+$sql = "INSERT INTO contacts (name, phone, email, message) VALUES ('".$name."', '".$phone."', '".$email."', '".$message."')";
 
-if ($stmt->execute()) {
-    // Send Email
-    $body = "<ul>
-                <li>Name: ".$name."</li>
-                <li>Phone: ".$phone."</li>
-                <li>Email: ".$email."</li>
-                <li>Message: ".$message."</li>
-             </ul>";
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+  
+  $conn->close();
+  header("Location: http://iceconnectisp.local/html/contact-us.html");
 
-    $status = mailfunction("", "Company", $body);
+//   redirect to html/contact-us.html
 
-    echo $status ? "<h1>Thanks! We will contact you soon.</h1>" : "<h1>Message saved, but email sending failed.</h1>";
-} else {
-    echo "<h1>Error saving message! Please try again.</h1>";
-}
+    $name = $_POST["name"];
+    $phone = $_POST['phone'];
+    $email = $_POST["email"];
+    $message = $_POST["message"];
 
-// Close connection
-$stmt->close();
-$conn->close();
+    
+
+    $body = "<ul><li>Name: ".$name."</li><li>Phone: ".$phone."</li><li>Email: ".$email."</li><li>Message: ".$message."</li></ul>";
+
+    // $status = mailfunction("", "Company", $body); //reciever
+    // if($status)
+    //     echo '<center><h1>Thanks! We will contact you soon.</h1></center>';
+    // else
+    //     echo '<center><h1>Error sending message! Please try again.</h1></center>';    
 ?>
