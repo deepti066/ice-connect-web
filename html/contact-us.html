@@ -34,6 +34,44 @@
         function enableSubmitBtn(){
             document.getElementById("mySubmitBtn").disabled = false;
         }
+
+        // $(document).ready(function () {
+            $(document).ready(function () {
+    $("#contactForm").submit(function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        console.log("clicked");
+
+        // Disable the button to prevent multiple submissions
+        $("#mySubmitBtn").prop("disabled", true).text("Submitting...");
+
+        // Get form data
+        var formData = $(this).serialize();
+
+        $.ajax({
+            type: "POST",
+            url: "/contactme.php",
+            data: formData,
+            dataType: "json",
+            success: function (response) {
+                $("#responseMessage").text(response.message).css("color", response.status === "success" ? "green" : "red");
+
+                if (response.status === "success") {
+                    $("#contactForm")[0].reset(); // Reset form on success
+                    grecaptcha.reset(); // Reset reCAPTCHA
+                }
+
+                $("#mySubmitBtn").prop("disabled", false).text("Submit");
+            },
+            error: function () {
+                $("#responseMessage").text("An error occurred. Please try again.").css("color", "red");
+                $("#mySubmitBtn").prop("disabled", false).text("Submit");
+            }
+        });
+    });
+});
+
+    // });
 </script>
 
 </head>
@@ -93,7 +131,7 @@
             </div>
         </div>
         <div class="contact-form">
-            <form action="/contactme.php" method="POST">
+            <form id="contactForm">
                 <input type="text" name="name" placeholder="Name" class="contact-form-txt" required>
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="contact-form-phone">
                 <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
@@ -102,9 +140,9 @@
                  <div style="display: flex; justify-content: left; align-items: left; margin-left: 25px; border-radius: 10px;">
                     <div class="g-recaptcha" data-sitekey="6LfUM_kqAAAAAAaqOXsL9iNcHaLpGetF9NM2gxRm" data-callback="enableSubmitBtn"></div>
                 </div>
-                
-                <input type="submit" value="Submit" id="mySubmitBtn" disabled="disabled" name="submit" class="contact-form-btn">
-            </form>
+                <button type="submit" id="mySubmitBtn" disabled class="contact-form-btn">Submit</button>
+  
+                </form>
 
             <div id="responseMessage" style="margin-top: 10px; font-weight: bold;"></div>
         </div>
