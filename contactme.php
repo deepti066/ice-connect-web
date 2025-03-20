@@ -1,11 +1,22 @@
 <?php
 header('Content-Type: application/json'); // Set JSON response header
 
+
+// Include config file to load environment variables
+require_once "config.php";
+
+// Database Connection using .env variables
+$servername = getenv('DB_HOST');
+$username = getenv('DB_USERNAME');
+$password = getenv('DB_PASSWORD');
+$database = getenv('DB_DATABASE');
+
+
 // Database Connection
-$servername = "localhost";
-$username = "root";
-$password = "Optinet2025##";
-$database = "contact_form_db";
+// $servername = "localhost";
+// $username = "root";
+// $password = "Optinet2025##";
+// $database = "contact_form_db";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
