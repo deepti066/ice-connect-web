@@ -28,7 +28,13 @@
     <link href="/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
     <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <script src="./js/main.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        function enableSubmitBtn(){
+            document.getElementById("mySubmitBtn").disabled = false;
+        }
+</script>
 
 </head>
 <body>
@@ -51,9 +57,40 @@
     <section id="contact" class="contact">
         <h1 class="heading">get in touch</h1>
     </section>
-    <div class="contact-in">
+    <div class="contact-in" >
         <div class="contact-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.839486761086!2d91.79831617613083!3d26.136776093003846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a59e7457b337b%3A0xa7d6449550164ef0!2sARYAHI%20OPTINET%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1741265157359!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <div class="info-box">
+                <h1><i class="fas fa-info-circle"></i>Contact Info</h1>
+            </div>
+            <div class="info-box" style="padding: 30px;">
+                <h4>
+                    <a href="https://www.google.com/maps/place/ARYAHI+OPTINET+PRIVATE+LIMITED/@26.1367761,91.7983162,17z/data=!3m1!4b1!4m6!3m5!1s0x375a59e7457b337b:0xa7d6449550164ef0!8m2!3d26.1367713!4d91.8008911!16s%2Fg%2F11y9_d20xj?entry=ttu&g_ep=EgoyMDI1MDMxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </a>
+                    Location
+                </h4>
+                <p>4th Floor, Madhab Towers, GS Rd, Rukmini Gaon, Guwahati, Assam 781022</p>
+            </div>
+            
+            <div class="info-box" style="padding: 30px;">
+                <h4><i class="fas fa-envelope"></i>Technical Support</h4>
+                <a href="mailto:services@iceconnectisp.com"  style="text-transform:lowercase">services@iceconnectisp.com</a>
+            </div>
+            <div class="info-box" style="padding: 30px;">
+                <h4>
+                    <i class="fas fa-phone-alt"></i> Phone
+                </h4>
+                <a href="tel:+918473067788">+91-8473067788</a>
+            </div>
+            <div class="info-box" style="padding: 30px;">
+                <h4>
+                    <i class="fas fa-file-invoice"></i> Bill Desk
+                </h4>
+                <a href="mailto:billdesk@iceconnectisp.com"  style="text-transform:lowercase">billdesk@iceconnectisp.com</a>
+
+                <!-- <p>For billing-related queries, visit: <br><a href="https://www.billdesk.com/">www.billdesk.com</a></p> -->
+            </div>
         </div>
         <div class="contact-form">
             <form action="/contactme.php" method="POST">
@@ -62,38 +99,16 @@
                 <input type="email" name="email" placeholder="Email" class="contact-form-email" required>
                 <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
                  <!-- CAPTCHA Section -->
-                <label id="captchaQuestion"></label>
-                <input type="number" id="captchaInput" placeholder="Enter the sum" required>
-                <span id="captchaError" style="color: red; display: none;">Incorrect, try again!</span>
-                <input type="hidden" id="captchaSum" name="captchaSum">
-                <input type="submit" value="Submit" name="submit" class="contact-form-btn">
+                 <div style="display: flex; justify-content: left; align-items: left; margin-left: 25px; border-radius: 10px;">
+                    <div class="g-recaptcha" data-sitekey="6LfUM_kqAAAAAAaqOXsL9iNcHaLpGetF9NM2gxRm" data-callback="enableSubmitBtn"></div>
+                </div>
+                
+                <input type="submit" value="Submit" id="mySubmitBtn" disabled="disabled" name="submit" class="contact-form-btn">
             </form>
-        </div>
-        </div>
 
-        <script>
-            let num1, num2, correctSum;
-        
-            function generateCaptcha() {
-                num1 = Math.floor(Math.random() * 10) + 1;
-                num2 = Math.floor(Math.random() * 10) + 1;
-                correctSum = num1 + num2;
-                document.getElementById("captchaQuestion").innerText = `Enter Captcha ${num1} + ${num2}?`;
-                document.getElementById("captchaSum").value = correctSum; // Store sum in hidden input
-            }
-        
-            function validateCaptcha() {
-                let userSum = document.getElementById("captchaInput").value;
-                if (parseInt(userSum) !== correctSum) {
-                    document.getElementById("captchaError").style.display = "inline";
-                    generateCaptcha(); 
-                    return false; 
-                }
-                return true; 
-            }
-        
-            window.onload = generateCaptcha;
-        </script>
+            <div id="responseMessage" style="margin-top: 10px; font-weight: bold;"></div>
+        </div>
+        </div>
 
 
     <div class="footer">

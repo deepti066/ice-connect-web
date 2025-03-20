@@ -128,19 +128,77 @@ body{
             font-size: 16px;
 			background: #fff;
 			box-shadow: 0px 0px 10px 0px #666;
+            background-color: #aaa;
+
 		}
 
 		.contact-map
 		{
-			width: 100%;
-			height: auto;
-			flex: 50%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		}
-		.contact-map iframe
-		{
-			width: 100%;
-			height: 100%;
-		}
+        .contact-map :hover{
+            letter-spacing: .1rem;
+            opacity: .9;
+            color: rgb(15, 15, 15);
+            background: #6dafb8;
+        }
+        .info-box {
+            background: #ffffff;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            align-items: center;
+        }
+        /* /* .info-box :hover{
+            letter-spacing: .1rem;
+            opacity: .9;
+            color: white;
+            background: #002e5f;
+        } */
+         
+        .info-box h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #333;
+        }
+        
+        .info-box h4 {
+            font-size: 18px;
+            margin: 0;
+            color: #444;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-box h4 i {
+            margin-right: 10px;
+            color: #f5560d;
+            size: 50px;
+        }
+        
+        /* .info-box p {
+            margin: 5px 0 0;
+            color: #666;
+            font-size: 16px;
+            text-indent: 40px;
+        } */
+        
+        /* .info-box a {
+            color: #007bff;
+            text-decoration: none;
+            margin-left: 10px;
+        } */
+        
+        /* .info-box a:hover {
+            text-decoration: underline;
+        } */
+
 		.contact-form
 		{
 			width: 100%;
@@ -151,9 +209,10 @@ body{
 		}
 		.contact-form-txt
 		{
+            margin-top: 20px;
             margin-left: 2rem;
 			width: 95%;
-			height: 40px;
+			height: 70px;
 			color: #000;
 			border: 1px solid #bcbcbc;
 			border-radius: 50px;
@@ -163,9 +222,10 @@ body{
 		}
         .contact-form-email
 		{
+            margin-top: 10px;
             margin-left: 2rem;
 			width: 95%;
-			height: 40px;
+			height: 70px;
 			color: #000;
 			border: 1px solid #bcbcbc;
 			border-radius: 50px;
@@ -186,8 +246,9 @@ body{
 		.contact-form-txtarea
 		{
             margin-left: 2rem;
+            margin-top: 10px;
 			width: 95%;
-			height: 130px;
+			height: 200px;
 			color: #000;
 			border: 1px solid #bcbcbc;
 			border-radius: 10px;
@@ -226,9 +287,10 @@ body{
         }
 		.contact-form-phone
 		{
+            margin-top: 10px;
             margin-left: 2rem;
 			width: 95%;
-			height: 40px;
+			height: 70px;
 			color: #000;
 			border: 1px solid #bcbcbc;
 			border-radius: 50px;
@@ -242,39 +304,9 @@ body{
             font-size: 1.5rem;
 		}
 
-        .captcha-container {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            margin-bottom: 10px;
-        }
-        
 
-        #captchaQuestion {
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-            display: block;
-            margin-bottom: 5px;
-            color: #002e5f;
-        }
-
-        #captchaInput {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            outline: none;
-        }
         
-        /* Error message style */
-        #captchaError {
-            font-size: 14px;
-            margin-top: 5px;
-        }
+        
 
 .footer {
     position: relative;

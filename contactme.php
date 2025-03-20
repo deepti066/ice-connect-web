@@ -1,59 +1,57 @@
-<?php   
-    // require("./mailing/mailfunction.php");
-
-    //print_r($_SERVER["REQUEST_METHOD"] );
-    //exit();
-    // Database Connection
+<?php
+// Database Connection
 $servername = "localhost";
-$username = "root";
+$username = "root"; 
 $password = "password";
-$database = "contact_form_db";
+$database = "contact_form_db"; 
 
 $conn = new mysqli($servername, $username, $password, $database);
 
 // Check Connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die(json_encode(["status" => "error", "message" => "Connection failed: " . $conn->connect_error]));
 }
 
 // Check if the request is POST
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    die("405 Method Not Allowed - Please use a POST request.");
+    die(json_encode(["status" => "error", "message" => "405 Method Not Allowed - Please use a POST request."]));
 }
 
-
+// Sanitize input
 $name = htmlspecialchars($_POST["name"]);
 $phone = htmlspecialchars($_POST["phone"]);
 $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
 $message = htmlspecialchars($_POST["message"]);
-$captcha = $_POST["captcha"];
 
-// Insert into MySQL
-$sql = "INSERT INTO contacts (name, phone, email, message) VALUES ('".$name."', '".$phone."', '".$email."', '".$message."')";
+// Google reCAPTCHA Secret Key
+$secretKey = '6LfUM_kqAAAAAKS-eoYgSyL8-Q2SEDPhIHnIa0wk'; 
+$captchaResponse = $_POST['g-recaptcha-response'] ?? '';
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }
-  
-  $conn->close();
-  header("Location: http://iceconnectisp.local/html/contact-us.html");
+// Verify reCAPTCHA
+if (!empty($captchaResponse)) {
+    $verifyResponse = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secretKey}&response={$captchaResponse}");
+    $response = json_decode($verifyResponse);
 
-//   redirect to html/contact-us.html
+    if (!$response->success) {
+        echo json_encode(["status" => "error", "message" => "reCAPTCHA verification failed. Please try again."]);
+        exit();
+    }
+} else {
+    echo json_encode(["status" => "error", "message" => "Please complete the reCAPTCHA."]);
+    exit();
+}
 
-    $name = $_POST["name"];
-    $phone = $_POST['phone'];
-    $email = $_POST["email"];
-    $message = $_POST["message"];
+// Insert into MySQL using Prepared Statements
+$sql = $conn->prepare("INSERT INTO contacts (name, phone, email, message) VALUES (?, ?, ?, ?)");
+$sql->bind_param("ssss", $name, $phone, $email, $message);
 
-    
+if ($sql->execute()) {
+    echo json_encode(["status" => "success", "message" => "Thanks! We'll get back to you soon."]);
+} else {
+    echo json_encode(["status" => "error", "message" => "Error: " . $sql->error]);
+}
 
-    $body = "<ul><li>Name: ".$name."</li><li>Phone: ".$phone."</li><li>Email: ".$email."</li><li>Message: ".$message."</li></ul>";
-
-    // $status = mailfunction("", "Company", $body); //reciever
-    // if($status)
-    //     echo '<center><h1>Thanks! We will contact you soon.</h1></center>';
-    // else
-    //     echo '<center><h1>Error sending message! Please try again.</h1></center>';    
+$sql->close();
+$conn->close();
+exit();
 ?>
